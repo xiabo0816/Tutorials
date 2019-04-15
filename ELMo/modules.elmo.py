@@ -14,6 +14,7 @@ character_ids = batch_to_ids(sentences)
 
 embeddings = elmo(character_ids)
 
+print(embeddings)
 # embeddings['elmo_representations'] is length two list of tensors.
 # Each element contains one layer of ELMo representations with shape
 # (2, 3, 1024).
