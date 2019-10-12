@@ -11,13 +11,13 @@ import json
 import argparse
 
 app = Flask(__name__)
-conn = pymysql.connect(host="202.112.195.82", port=5258,
-                       user="root", passwd="", db="patent")
+conn = pymysql.connect(host="XXX", port=5258,
+                       user="XXX", passwd="XXX", db="XXX")
 cursor = conn.cursor()
 
 
 def get_args_parser():
-    parser = argparse.ArgumentParser(description='中文专利数据全文')
+    parser = argparse.ArgumentParser(description='中文数据全文')
     parser.add_argument('-p', '--port', default=8080,
                         type=int, help='监听端口')
     return parser.parse_args()
