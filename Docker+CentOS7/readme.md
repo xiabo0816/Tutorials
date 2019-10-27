@@ -4,6 +4,8 @@
 
 > docker run -w /app -p 8080:8080 http_ori
 
+> docker run -d -w /app -p 8080:8080 http_ori
+
 > docker ps
 
 > docker stop http_ori
