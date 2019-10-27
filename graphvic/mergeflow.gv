@@ -1,0 +1,13 @@
+digraph G {
+node[fontname="Microsoft YaHei"]
+a -> b;
+a -> c;
+b -> d;
+c -> d;
+a [label="通过小结果设置标志位"]
+b [label="遍历大数据审核标志位"]
+c [label="构造hash"]
+d [label="小结果找hash"]
+e [label="找到判关系"]
+f [label="得到结果表示RetInfo"]
+}
