@@ -58,13 +58,15 @@ def index():
         return json.dumps("pid is required.", ensure_ascii=False)
 
     res = {}
+    [res['mainclass'], res['title']] = findOrNull(
+        "select mainclass, title from cn_baseinfo_all where publicido = '%s';" % (pid))
+    [res['abstract']] = findOrNull(
+        "select abstract from cn_abstract_all where publicid = '%s';" % (pid))
     [res['claim']] = findOrNull(
         "select claim from cn_claim_all where publicid = '%s';" % (pid))
     [res['description']] = findOrNull(
         "select description from cn_description_all where publicid = '%s';" % (pid))
-    [res['mainclass'], res['title']] = findOrNull(
-        "select mainclass, title from cn_baseinfo_all where publicido = '%s';" % (pid))
-
+        
     return json.dumps(res, ensure_ascii=False)
 
 
