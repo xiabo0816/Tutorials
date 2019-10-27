@@ -12,7 +12,7 @@ import argparse
 
 app = Flask(__name__)
 conn = pymysql.connect(host="XXX", port=5258,
-                       user="XXX", passwd="XXX", db="XXX")
+                       user="root", passwd="", db="patent")
 cursor = conn.cursor()
 
 
