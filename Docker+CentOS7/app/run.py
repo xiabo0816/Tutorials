@@ -17,7 +17,7 @@ cursor = conn.cursor()
 
 
 def get_args_parser():
-    parser = argparse.ArgumentParser(description='中文数据全文')
+    parser = argparse.ArgumentParser(description='中文专利数据全文')
     parser.add_argument('-p', '--port', default=8080,
                         type=int, help='监听端口')
     return parser.parse_args()
@@ -51,22 +51,36 @@ def findOrNull(sql):
     return res
 
 
-@app.route('/', methods=['GET', 'POST'])
-def index():
+@app.route('/pid', methods=['GET', 'POST'])
+def pid():
     pid = request.args.get('pid', '')
     if not pid:
         return json.dumps("pid is required.", ensure_ascii=False)
 
     res = {}
-    [res['mainclass'], res['title']] = findOrNull(
-        "select mainclass, title from cn_baseinfo_all where publicido = '%s';" % (pid))
-    [res['abstract']] = findOrNull(
-        "select abstract from cn_abstract_all where publicid = '%s';" % (pid))
     [res['claim']] = findOrNull(
         "select claim from cn_claim_all where publicid = '%s';" % (pid))
     [res['description']] = findOrNull(
         "select description from cn_description_all where publicid = '%s';" % (pid))
-        
+    [res['mainclass'], res['title']] = findOrNull(
+        "select mainclass, title from cn_baseinfo_all where publicido = '%s';" % (pid))
+
+    return json.dumps(res, ensure_ascii=False)
+
+@app.route('/aid', methods=['GET', 'POST'])
+def aid():
+    aid = request.args.get('aid', '')
+    if not aid:
+        return json.dumps("aid is required.", ensure_ascii=False)
+
+    res = {}
+    [res['claim']] = findOrNull(
+        "select claim from cn_claim_all where publicid in ( select publicido from cn_baseinfo_all where appido = '%s' );" % (aid))
+    [res['description']] = findOrNull(
+        "select description from cn_description_all where publicid in ( select publicido from cn_baseinfo_all where appido = '%s' );" % (aid))
+    [res['mainclass'], res['title']] = findOrNull(
+        "select mainclass, title from cn_baseinfo_all where appido = '%s';" % (aid))
+
     return json.dumps(res, ensure_ascii=False)
 
 
