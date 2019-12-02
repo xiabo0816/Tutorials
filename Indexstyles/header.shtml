@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+	<title><!--#echo var="SERVER_NAME" --></title>
+	<link href="/.indexstyles/css/superhero.css" rel="stylesheet">
+
+	<!--[if lt IE 9]>
+	<script src="{{ page.assets }}/js/iefix.js"></script>
+	<![endif]-->
+</head>
+<body>
+<header>
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">
+					<span class="icon icon-abba" aria-hidden="true"></span>
+					<!--#echo var="SERVER_NAME" -->
+				</a>
+			</div>
+		</div>
+	</nav>
+</header>
+<main>
+	<div class="container">
+<nav>
+	<ol class="breadcrumb" style="display:none" id="breadcrumb">
+		<li class="active">
+			<span class="icon icon-home" aria-hidden="true"></span>
+			<span class="sr-only"><!--#echo var="SERVER_NAME" --></span>
+		</li>
+	</ol>
+</nav>
+<div class="table-responsive" style="display:auto" id="table">

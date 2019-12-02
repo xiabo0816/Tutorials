@@ -1,0 +1,32 @@
+DirectoryIndex disabled
+
+AddType text/html .shtml
+AddOutputFilter INCLUDES .shtml
+
+Options +Indexes
+Options +Includes
+
+IndexOptions Charset=UTF-8
+IndexOptions FancyIndexing
+IndexOptions SuppressHTMLPreamble
+IndexOptions HTMLTable
+IndexOptions VersionSort
+IndexOptions SuppressDescription
+IndexOptions SuppressIcon
+IndexOptions SuppressRules
+IndexOptions FoldersFirst
+IndexOptions IgnoreCase
+IndexOptions NameWidth=*
+
+IndexOrderDefault Ascending Name
+
+HeaderName /.indexstyles/header.shtml
+ReadmeName /.indexstyles/footer.shtml
+
+IndexIgnore .indexstyles
+IndexIgnore favicon.ico
+
+ErrorDocument 401 /.indexstyles/error_401.shtml
+ErrorDocument 403 /.indexstyles/error_403.shtml
+ErrorDocument 404 /.indexstyles/error_404.shtml
+ErrorDocument 500 /.indexstyles/error_500.shtml
