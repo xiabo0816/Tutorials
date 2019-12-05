@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="dropzone.min.js"></script>
+    <link rel="stylesheet" href="/.indexstyles/css/superhero.css">
+</head>
+<style>
+    .dropzone {
+        border-radius: 10px;
+        width: 100%;
+        background: #4E5D6C;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+        height: 38.2%;
+        display: flex;
+    }
+
+    .dropzone .dz-message {
+        font-weight: 400;
+    }
+
+    .dropzone .dz-message .note {
+        font-size: 0.8em;
+        font-weight: 200;
+        display: block;
+        margin-top: 1.4rem;
+    }
+
+    .container {
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+
+    /** Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) http://cssreset.com */
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+        height: 100%;
+        font-family: Roboto, "Open Sans", sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 1.4rem;
+        text-rendering: optimizeLegibility;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form action="/file-upload" class="dropzone">
+            <div class="fallback">
+                <input name="file" type="file" multiple />
+            </div>
+            <div class="dz-message">
+                将文件拖至此处上传，轻点拖<br />
+                <span class="note">(大于 <strong>多少</strong> 的文件不会被接受；文件会上传到 <strong>啥地方</strong>，跳过去就可以看到了)</span>
+            </div>
+        </form>
+    </div>
+    <script>
+  // var myDropzone = new Dropzone("div#dropzone", {
+  //     url: "fileUpload.htm",
+  //     maxFiles: 10,
+  //     maxFilesize: 512,
+  //     acceptedFiles: ".jpg"
+  //   });
+    </script>
+</body>
+
+</html>
