@@ -1,4 +1,4 @@
-# 图片服务器使用[MinIO](https://min.io/download)
+# 文件服务器使用[MinIO](https://min.io/download)
 
 MinIO 是一个基于Apache License v2.0开源协议的对象存储服务。它兼容亚马逊S3云存储服务接口，非常适合于存储大容量非结构化的数据，例如图片、视频、日志文件、备份数据和容器/虚拟机镜像等，而一个对象文件可以是任意大小，从几kb到最大5T不等。
 
@@ -81,8 +81,6 @@ mc config host add minioadmin http://127.0.0.1:9000 minioadmin minioadmin
 
 
 ## 配置minio的laravel插件
-
-不一定用得上，因为已经安装好了
 
 ```bash
 # 查看当前镜像源
