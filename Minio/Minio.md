@@ -82,8 +82,6 @@ mc config host add minioadmin http://127.0.0.1:9000 minioadmin minioadmin
 
 ## 配置minio的laravel插件
 
-不一定用得上，因为已经安装好了
-
 ```bash
 # 查看当前镜像源
 composer config -l
