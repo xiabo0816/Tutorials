@@ -18,3 +18,8 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 > go build
 
+这里，不是go build xxx.go命令，go build xxx.go只会单独编译xxx.go文件，而不会自动编译链接相关的C源文件
+
+if mac
+
+> go build -ldflags -w
