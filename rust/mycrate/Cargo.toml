@@ -1,0 +1,25 @@
+# cargo login cioTkc7P46PDbz6ms57r7anzpTPZMrZObgB
+#   C:\Users\Administrator\.cargo\credentials
+# cargo publish
+# cargo yank --vers 1.0.1
+# cargo yank --vers 1.0.1 --undo
+
+
+[package]
+name = "mycrate"
+# http://semver.org
+version = "0.1.0"
+edition = "2021"
+
+description=""
+license="MIT"
+author=""
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3

@@ -1,0 +1,12 @@
+[package]
+name = "adder"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand="0.3.15"
+
+# 显式指明crate之间的依赖关系
+add-one = {path = '../add-one'}

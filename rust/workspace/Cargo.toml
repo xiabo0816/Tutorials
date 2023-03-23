@@ -1,0 +1,23 @@
+# crate共享同一个target
+
+[workspace]
+# cargo new adder
+# cargo new add-one --lib
+# cargo new add-two --lib
+# cargo build
+members = [
+    "adder",
+    "add-one",
+    "add-two"
+]
+
+
+# cargo test
+# cargo test -p add-one
+# cargo run -p adder
+
+# 使用自定义命令扩展 cargo
+# 如果 $PATH 中的某个二进制是 cargo-something，
+# 你可以像子命令一样运行:
+# cargo something
+# cargo --list
